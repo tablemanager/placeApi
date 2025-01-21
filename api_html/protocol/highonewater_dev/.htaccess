@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+ RewriteEngine On
+ RewriteCond $1 !^(index\.php|js)
+ RewriteCond %[REQUEST_FILENAME] !-f
+ RewriteCond %[REQUEST_FILENAME] !-d
+ RewriteCond %{QUERY_STRING} ^BARCODE=(.*)$
+ RewriteRule ^(.*)$ index.php?func=$1&no=%1 [L]
+</IfModule>

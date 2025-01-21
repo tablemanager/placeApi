@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+ RewriteEngine On
+ RewriteCond $1 !^(index\.php|aws\.php|common|img|css|img|js|vendor)
+ RewriteCond %[REQUEST_FILENAME] !-f
+ RewriteCond %[REQUEST_FILENAME] !-d
+ RewriteRule ^(.*)$ index.php?val=$1 [L]
+</IfModule>

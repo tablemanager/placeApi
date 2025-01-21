@@ -1,0 +1,95 @@
+		<meta charset='utf-8'>
+		<div class="container" style="font-size:12px">
+			<hr>
+			<xmp>
+		[공통헤더]
+
+			Authorization: 문자API키
+
+		[SMS] - 단문 80자
+
+			● URL : https://gateway.sparo.cc/internal/msg/api/SMS
+			● Param
+			{
+				"dstAddr":"01098761234",
+				"callBack":"0221563080",
+				"msgSubject":"제목",
+				"msgText":"내용",
+			}
+
+
+		[MMS] - 첨부화일이 있는 긴 문장
+
+			● URL : https://gateway.sparo.cc/internal/msg/api/MMS
+			● Param
+			{
+				"dstAddr":"01098761234",
+				"callBack":"0221563080",
+				"msgSubject":"제목",
+				"msgText":"내용",
+				"mmsFile":"https://www.google.co.kr/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
+			}
+
+
+		[LMS] - 첨부화일이 없는 긴 문장
+
+			● URL : https://gateway.sparo.cc/internal/msg/api/LMS
+			● Param
+			{
+				"dstAddr":"01098761234",
+				"callBack":"0221563080",
+				"msgSubject":"제목",
+				"msgText":"내용",
+				"mmsFile":"https://www.google.co.kr/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
+			}
+
+
+		[KAKAO] - 등록된 카카오 템플릿 연동
+
+			● URL : https://gateway.sparo.cc/internal/msg/api/KAKAO
+			● Param
+			{
+				"dstAddr":"01098761234",
+				"callBack":"0221563080",
+				"msgSubject":"HAMA-009",
+				"msgText":"등록된 템플릿 내용",
+				"kakao_profile":"hamac",
+				"kakao_button":{		
+					"button1":{
+						"name":"모바일 입장권 보기",
+						"type":"WL",
+						"url_mobile":"https://sparo.cc/X9DWC2mQ9Qz3ZGbHUy",
+						"url_pc":"https://sparo.cc/X9DWC2mQ9Qz3ZGbHUy"
+						},
+					"button2":{
+						"name":"운영시간 바로보기",
+						"type":"WL",
+						"url_mobile":"http://www.lotteworld.com/app/wtp_openingHour/view.asp?cmsCd=CM0295",
+						"url_pc":"http://www.lotteworld.com/app/wtp_openingHour/view.asp?cmsCd=CM0295"
+						},
+					"button3":{
+						"name":"운영시설 바로보기",
+						"type":"WL",
+						"url_mobile":"http://www.lotteworld.com/app/wtp_suspendInfo/view.asp?cmsCd=CM0296",
+						"url_pc":"http://www.lotteworld.com/app/wtp_suspendInfo/view.asp?cmsCd=CM0296"
+						},
+					"button4":{
+						"name":"가이드맵 바로보기",
+						"type":"WL",
+						"url_mobile":"http://img.sparo.kr/sparo/2017/lottewater/lottewater_guide.jpg",
+						"url_pc":"http://img.sparo.kr/sparo/2017/lottewater/lottewater_guide.jpg"
+						}
+				}
+			}
+
+
+		[공통 Response]
+
+			{
+				"code":"100",
+				"msg":"발송완료"
+			}			
+
+
+			</xmp>
+		</div> <!-- /container -->	

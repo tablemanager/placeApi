@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+ RewriteEngine On
+ RewriteCond $1 !^(index\.php|recv\.php|recv20220712\.php)
+ RewriteCond %[REQUEST_FILENAME] !-f
+ RewriteCond %[REQUEST_FILENAME] !-d
+ RewriteRule ^(.*)$ index.php?val=$1 [L]
+</IfModule>
