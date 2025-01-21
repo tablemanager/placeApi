@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  api_html:
+    build:
+      context: . # 현재 디렉토리에서 Dockerfile 검색
+      dockerfile: Dockerfile
+    container_name: api_html_container
+    ports:
+      - "80:80" # 호스트의 80 포트를 컨테이너의 80 포트에 매핑
+    volumes:
+      - ./api_html:/var/www/html # 파일 변경 시 즉시 반영
+      - ./000-default.conf:/etc/apache2/sites-available/000-default.conf
+    environment:
+      APACHE_LOG_DIR: /var/log/apache2
+    restart: always
